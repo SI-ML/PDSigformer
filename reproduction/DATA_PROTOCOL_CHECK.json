@@ -1,0 +1,102 @@
+{
+  "shimmer": {
+    "split_seed": 42,
+    "normalization": {
+      "filtering": false,
+      "fitting_axis": "time",
+      "fitting_scope": "each_window_independently",
+      "includes_existing_zero_padding": true,
+      "method": "StandardScaler_per_window_per_channel",
+      "recropping": false,
+      "sklearn_version": "1.2.2"
+    },
+    "splits": {
+      "train": {
+        "shape": [
+          80,
+          4096,
+          6
+        ],
+        "subjects": 80,
+        "HC": 22,
+        "PD": 58
+      },
+      "valid": {
+        "shape": [
+          26,
+          4096,
+          6
+        ],
+        "subjects": 26,
+        "HC": 7,
+        "PD": 19
+      },
+      "test": {
+        "shape": [
+          24,
+          4096,
+          6
+        ],
+        "subjects": 24,
+        "HC": 6,
+        "PD": 18
+      }
+    },
+    "subject_overlap_counts": {
+      "train_valid": 0,
+      "train_test": 0,
+      "valid_test": 0
+    },
+    "passed": true
+  },
+  "pads": {
+    "split_seed": 42,
+    "normalization": {
+      "filtering": false,
+      "fitting_axis": "time",
+      "fitting_scope": "each_window_independently",
+      "includes_existing_zero_padding": true,
+      "method": "StandardScaler_per_window_per_channel",
+      "recropping": false,
+      "sklearn_version": "1.2.2"
+    },
+    "splits": {
+      "train": {
+        "shape": [
+          215,
+          976,
+          6
+        ],
+        "subjects": 215,
+        "HC": 49,
+        "PD": 166
+      },
+      "valid": {
+        "shape": [
+          70,
+          976,
+          6
+        ],
+        "subjects": 70,
+        "HC": 15,
+        "PD": 55
+      },
+      "test": {
+        "shape": [
+          70,
+          976,
+          6
+        ],
+        "subjects": 70,
+        "HC": 15,
+        "PD": 55
+      }
+    },
+    "subject_overlap_counts": {
+      "train_valid": 0,
+      "train_test": 0,
+      "valid_test": 0
+    },
+    "passed": true
+  }
+}

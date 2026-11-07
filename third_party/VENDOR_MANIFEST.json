@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "files": [
+    {
+      "vendored_path": "timesnet/model.py",
+      "source_url": "https://raw.githubusercontent.com/thuml/Time-Series-Library/4e938a1767106324dd753b2a44832bf870a0252e/models/TimesNet.py",
+      "commit": "4e938a1767106324dd753b2a44832bf870a0252e",
+      "original_sha256": "f64c4bed1fd7347090044a0163bd4209c9f9ec1c1b19ceff47842df36b64bba7",
+      "vendored_sha256": "632369144856a1dd00ca89e9d8d45a5ca3c3358958cb21ab645c31781fe662fe",
+      "patches": [
+        {
+          "before": "from layers.Embed import DataEmbedding",
+          "after": "from .embed import DataEmbedding"
+        },
+        {
+          "before": "from layers.Conv_Blocks import Inception_Block_V1",
+          "after": "from .conv_blocks import Inception_Block_V1"
+        }
+      ]
+    },
+    {
+      "vendored_path": "timesnet/conv_blocks.py",
+      "source_url": "https://raw.githubusercontent.com/thuml/Time-Series-Library/4e938a1767106324dd753b2a44832bf870a0252e/layers/Conv_Blocks.py",
+      "commit": "4e938a1767106324dd753b2a44832bf870a0252e",
+      "original_sha256": "16d9f2d9e4fa094dc357901e32beecda9839709bcca02625e6447186933ce4e1",
+      "vendored_sha256": "16d9f2d9e4fa094dc357901e32beecda9839709bcca02625e6447186933ce4e1",
+      "patches": []
+    },
+    {
+      "vendored_path": "timesnet/embed.py",
+      "source_url": "https://raw.githubusercontent.com/thuml/Time-Series-Library/4e938a1767106324dd753b2a44832bf870a0252e/layers/Embed.py",
+      "commit": "4e938a1767106324dd753b2a44832bf870a0252e",
+      "original_sha256": "17e7c3577324c41a0da427a199c955b782fde905aabb1f7cbc3c4e15ebd4ae35",
+      "vendored_sha256": "17e7c3577324c41a0da427a199c955b782fde905aabb1f7cbc3c4e15ebd4ae35",
+      "patches": []
+    },
+    {
+      "vendored_path": "tech/model.py",
+      "source_url": "https://raw.githubusercontent.com/Levi-Ackman/TeCh/9a378cc546a5d97c871eff282148175b3c7cd75b/models/TeCh.py",
+      "commit": "9a378cc546a5d97c871eff282148175b3c7cd75b",
+      "original_sha256": "af113bbea6a7cf5a6c2638594fb2a3854c0c5fe34b77d225ec49704421107ceb",
+      "vendored_sha256": "23a51cdb3934bed6f7836d0beffa1d24ec4fd34ab57b513d603fb4179eab0a23",
+      "patches": [
+        {
+          "before": "from layers.Transformer_EncDec import Encoder,EncoderLayer",
+          "after": "from .encoder import Encoder,EncoderLayer"
+        },
+        {
+          "before": "from layers.Augmentation import get_augmentation",
+          "after": "from .augmentation import get_augmentation"
+        }
+      ]
+    },
+    {
+      "vendored_path": "tech/encoder.py",
+      "source_url": "https://raw.githubusercontent.com/Levi-Ackman/TeCh/9a378cc546a5d97c871eff282148175b3c7cd75b/layers/Transformer_EncDec.py",
+      "commit": "9a378cc546a5d97c871eff282148175b3c7cd75b",
+      "original_sha256": "4cd558c0d0c36241b04eeffbd49dad4834f228c285cf10e05b572d7e704715e9",
+      "vendored_sha256": "4cd558c0d0c36241b04eeffbd49dad4834f228c285cf10e05b572d7e704715e9",
+      "patches": []
+    },
+    {
+      "vendored_path": "tech/augmentation.py",
+      "source_url": "https://raw.githubusercontent.com/Levi-Ackman/TeCh/9a378cc546a5d97c871eff282148175b3c7cd75b/layers/Augmentation.py",
+      "commit": "9a378cc546a5d97c871eff282148175b3c7cd75b",
+      "original_sha256": "b7edd4a7a946d68e60d2fc8394ea94842b7121e9b339dfa11f3fadda9e4d01bf",
+      "vendored_sha256": "b7edd4a7a946d68e60d2fc8394ea94842b7121e9b339dfa11f3fadda9e4d01bf",
+      "patches": []
+    }
+  ],
+  "license_status": {
+    "timesnet": "Official LICENSE preserved in timesnet/LICENSE",
+    "tech": "No LICENSE/COPYING file found in the pinned Git tree; no license invented"
+  }
+}

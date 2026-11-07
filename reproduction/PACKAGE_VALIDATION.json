@@ -1,0 +1,35 @@
+{
+  "clean_source_zip_tested": true,
+  "tech_download_sha_verified": true,
+  "clean_package_training": {
+    "suite": "training",
+    "total": 3,
+    "passed": 3,
+    "failed": 0,
+    "completed": true
+  },
+  "clean_package_historical_inference": {
+    "suite": "inference",
+    "total": 5,
+    "passed": 5,
+    "failed": 0,
+    "completed": true
+  },
+  "new_training_checkpoint_inference": [
+    {
+      "profile": "pads_r4",
+      "exit_code": 0
+    },
+    {
+      "profile": "pads_timesnet",
+      "exit_code": 0
+    },
+    {
+      "profile": "pads_tech",
+      "exit_code": 0
+    }
+  ],
+  "fresh_environment_install_performed": false,
+  "environment_note": "Existing validated Python 3.10 / Torch 2.8 environment; source extracted into a separate directory",
+  "release_formatting_ast_equivalence": "PACKAGE_SOURCE_EQUIVALENCE.json"
+}

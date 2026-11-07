@@ -1,0 +1,22 @@
+{
+  "unique_checkpoints": 102,
+  "table_references": 108,
+  "successful_inference_slots": 204,
+  "repeated_inference_consistent": true,
+  "profiles_training_checked": 34,
+  "training_seeds": [
+    42
+  ],
+  "training_epochs_per_profile": [
+    1
+  ],
+  "fresh_full_training_verified": false,
+  "inference_attempts": 218,
+  "failed_inference_attempts_preserved": 14,
+  "training_attempts": 40,
+  "failed_training_attempts_preserved": 6,
+  "maximum_historical_probability_difference": 2.1457672119140625e-06,
+  "metric_tolerance": 1e-12,
+  "probability_atol": 1e-06,
+  "probability_rtol": 1e-05
+}

@@ -1,0 +1,275 @@
+[
+  {
+    "path": "models/pds_components.py",
+    "source": "source_snapshots/pds_pads_r4/source/code/Medformer_ext/models/PDSigformer.py",
+    "source_sha256": "b3308621925f54a711b483fc35e9ab5bee70b42e0fea25fd9750a1f0ea1a5678",
+    "sha256": "b1841a3f0b5c831a14aeaf124dfaba56084bd254aeba202d8d4bf05755883fc4",
+    "modified": true
+  },
+  {
+    "path": "models/pds_timesnet.py",
+    "source": "source_snapshots/pds_pads_r4/source/code/Medformer_ext/models/TimesNet.py",
+    "source_sha256": "f64c4bed1fd7347090044a0163bd4209c9f9ec1c1b19ceff47842df36b64bba7",
+    "sha256": "f64c4bed1fd7347090044a0163bd4209c9f9ec1c1b19ceff47842df36b64bba7",
+    "modified": false
+  },
+  {
+    "path": "models/PDSigformer.py",
+    "source": "source_snapshots/pds_pads_r4/source/code/Medformer_ext/models/PDSigformerPilot.py",
+    "source_sha256": "a4079dbdd2f938c80966715b6e5fdecfb079babebc276639762caaf661809d84",
+    "sha256": "3d77128e23905828e4a34dc1168f0a8f8cc7e66901b7df1242f9ef8c5b3ac65d",
+    "modified": true
+  },
+  {
+    "path": "third_party/timesnet/__init__.py",
+    "source": "source_snapshots/baseline_LRBatchDepth/runtime/vendor/timesnet/__init__.py",
+    "source_sha256": "a64f1adde4615bdfd68e57892a0ee4b5e883827f77e70b5f6567cff345d9d5af",
+    "sha256": "a64f1adde4615bdfd68e57892a0ee4b5e883827f77e70b5f6567cff345d9d5af",
+    "modified": false
+  },
+  {
+    "path": "third_party/timesnet/conv_blocks.py",
+    "source": "source_snapshots/baseline_LRBatchDepth/runtime/vendor/timesnet/conv_blocks.py",
+    "source_sha256": "16d9f2d9e4fa094dc357901e32beecda9839709bcca02625e6447186933ce4e1",
+    "sha256": "16d9f2d9e4fa094dc357901e32beecda9839709bcca02625e6447186933ce4e1",
+    "modified": false
+  },
+  {
+    "path": "third_party/timesnet/embed.py",
+    "source": "source_snapshots/baseline_LRBatchDepth/runtime/vendor/timesnet/embed.py",
+    "source_sha256": "17e7c3577324c41a0da427a199c955b782fde905aabb1f7cbc3c4e15ebd4ae35",
+    "sha256": "17e7c3577324c41a0da427a199c955b782fde905aabb1f7cbc3c4e15ebd4ae35",
+    "modified": false
+  },
+  {
+    "path": "third_party/timesnet/model.py",
+    "source": "source_snapshots/baseline_LRBatchDepth/runtime/vendor/timesnet/model.py",
+    "source_sha256": "632369144856a1dd00ca89e9d8d45a5ca3c3358958cb21ab645c31781fe662fe",
+    "sha256": "632369144856a1dd00ca89e9d8d45a5ca3c3358958cb21ab645c31781fe662fe",
+    "modified": false
+  },
+  {
+    "path": "third_party/tech/__init__.py",
+    "source": "source_snapshots/baseline_LRBatchDepth/runtime/vendor/tech/__init__.py",
+    "source_sha256": "27ef2fc2c2368cc07f108a9dd369991978d3b012c022456ba33f3cbdfbc23663",
+    "sha256": "27ef2fc2c2368cc07f108a9dd369991978d3b012c022456ba33f3cbdfbc23663",
+    "modified": false
+  },
+  {
+    "path": "third_party/tech/augmentation.py",
+    "source": "source_snapshots/baseline_LRBatchDepth/runtime/vendor/tech/augmentation.py",
+    "source_sha256": "b7edd4a7a946d68e60d2fc8394ea94842b7121e9b339dfa11f3fadda9e4d01bf",
+    "sha256": "b7edd4a7a946d68e60d2fc8394ea94842b7121e9b339dfa11f3fadda9e4d01bf",
+    "modified": false
+  },
+  {
+    "path": "third_party/tech/encoder.py",
+    "source": "source_snapshots/baseline_LRBatchDepth/runtime/vendor/tech/encoder.py",
+    "source_sha256": "4cd558c0d0c36241b04eeffbd49dad4834f228c285cf10e05b572d7e704715e9",
+    "sha256": "4cd558c0d0c36241b04eeffbd49dad4834f228c285cf10e05b572d7e704715e9",
+    "modified": false
+  },
+  {
+    "path": "third_party/tech/model.py",
+    "source": "source_snapshots/baseline_LRBatchDepth/runtime/vendor/tech/model.py",
+    "source_sha256": "23a51cdb3934bed6f7836d0beffa1d24ec4fd34ab57b513d603fb4179eab0a23",
+    "sha256": "23a51cdb3934bed6f7836d0beffa1d24ec4fd34ab57b513d603fb4179eab0a23",
+    "modified": false
+  },
+  {
+    "path": "models/TimesNet.py",
+    "source": "source_snapshots/baseline_LRBatchDepth/runtime/vendor/timesnet/model.py",
+    "source_sha256": "632369144856a1dd00ca89e9d8d45a5ca3c3358958cb21ab645c31781fe662fe",
+    "sha256": "b4d4014c323a6dbe6f01aa13be518091a7d95eda16fd43d5dce737c3cddd71d5",
+    "modified": true
+  },
+  {
+    "path": "third_party/medformer_paper/layers/Augmentation.py",
+    "source": "source_snapshots/baseline_LRBatchDepth/official/layers/Augmentation.py",
+    "source_sha256": "570672b6b8f9ef99842012f1620997b8d7a7e7a63c3e642250db5f46a1769334",
+    "sha256": "570672b6b8f9ef99842012f1620997b8d7a7e7a63c3e642250db5f46a1769334",
+    "modified": true
+  },
+  {
+    "path": "third_party/medformer_paper/layers/AutoCorrelation.py",
+    "source": "source_snapshots/baseline_LRBatchDepth/official/layers/AutoCorrelation.py",
+    "source_sha256": "0491f29e5a6cc70f25d3fd53e28e039868a2302395c16144db9e550a24144e96",
+    "sha256": "0491f29e5a6cc70f25d3fd53e28e039868a2302395c16144db9e550a24144e96",
+    "modified": true
+  },
+  {
+    "path": "third_party/medformer_paper/layers/Autoformer_EncDec.py",
+    "source": "source_snapshots/baseline_LRBatchDepth/official/layers/Autoformer_EncDec.py",
+    "source_sha256": "9d3e7fb449c0025df297de3371bf88dd7551cf4b3d9a156a5a8f1abb85df025a",
+    "sha256": "9d3e7fb449c0025df297de3371bf88dd7551cf4b3d9a156a5a8f1abb85df025a",
+    "modified": true
+  },
+  {
+    "path": "third_party/medformer_paper/layers/Conv_Blocks.py",
+    "source": "source_snapshots/baseline_LRBatchDepth/official/layers/Conv_Blocks.py",
+    "source_sha256": "3e497cc872aa38296e17f296293a99af676d3bc03c002cd2f617d9cabae966b3",
+    "sha256": "3e497cc872aa38296e17f296293a99af676d3bc03c002cd2f617d9cabae966b3",
+    "modified": true
+  },
+  {
+    "path": "third_party/medformer_paper/layers/Crossformer_EncDec.py",
+    "source": "source_snapshots/baseline_LRBatchDepth/official/layers/Crossformer_EncDec.py",
+    "source_sha256": "9e864e65220b93d8572d3d08a4b39b241899be38f9b76b04bbf2fdd3d7647145",
+    "sha256": "bc5641ba88d7293c4aaefb617e88ca6230a7bb2d8fd11156c976ecb26ce85dd0",
+    "modified": true
+  },
+  {
+    "path": "third_party/medformer_paper/layers/ETSformer_EncDec.py",
+    "source": "source_snapshots/baseline_LRBatchDepth/official/layers/ETSformer_EncDec.py",
+    "source_sha256": "c95289565dfda8acdc380bc4413cfc10f055ce164f313371ccd2172b03e097a0",
+    "sha256": "c95289565dfda8acdc380bc4413cfc10f055ce164f313371ccd2172b03e097a0",
+    "modified": true
+  },
+  {
+    "path": "third_party/medformer_paper/layers/Embed.py",
+    "source": "source_snapshots/baseline_LRBatchDepth/official/layers/Embed.py",
+    "source_sha256": "b41aad875ea142bdad59edb420f101d6f21920ddadc2c52f0459da89d3350693",
+    "sha256": "1a7fc6c1db0cd1b4d0e1789bce4fb79370c1010061b9ff7d2e34f6b3235dfec7",
+    "modified": true
+  },
+  {
+    "path": "third_party/medformer_paper/layers/FourierCorrelation.py",
+    "source": "source_snapshots/baseline_LRBatchDepth/official/layers/FourierCorrelation.py",
+    "source_sha256": "6003208bcb61d1d5c105aa4cd617f11a6b3a3ec02c01195016a77c9dcc7b9125",
+    "sha256": "6003208bcb61d1d5c105aa4cd617f11a6b3a3ec02c01195016a77c9dcc7b9125",
+    "modified": true
+  },
+  {
+    "path": "third_party/medformer_paper/layers/Medformer_EncDec.py",
+    "source": "source_snapshots/baseline_LRBatchDepth/official/layers/Medformer_EncDec.py",
+    "source_sha256": "b1a9e1a863a275f9799de893d818fedfcdba5d4dcc70f7fd51121f50a1cf408a",
+    "sha256": "b1a9e1a863a275f9799de893d818fedfcdba5d4dcc70f7fd51121f50a1cf408a",
+    "modified": true
+  },
+  {
+    "path": "third_party/medformer_paper/layers/MultiWaveletCorrelation.py",
+    "source": "source_snapshots/baseline_LRBatchDepth/official/layers/MultiWaveletCorrelation.py",
+    "source_sha256": "12bac01955cb2d837ed506d97f455044364d7ade07d89e7e48fb091581561901",
+    "sha256": "12bac01955cb2d837ed506d97f455044364d7ade07d89e7e48fb091581561901",
+    "modified": true
+  },
+  {
+    "path": "third_party/medformer_paper/layers/Pyraformer_EncDec.py",
+    "source": "source_snapshots/baseline_LRBatchDepth/official/layers/Pyraformer_EncDec.py",
+    "source_sha256": "ed08e562e2a5ba7a387131aa05711fe71a247c92de6af83795d9973e672c7846",
+    "sha256": "f6bba5adbe921153299a08601e6d833bc76f020e4db40ac840153d5ce8283fff",
+    "modified": true
+  },
+  {
+    "path": "third_party/medformer_paper/layers/SelfAttention_Family.py",
+    "source": "source_snapshots/baseline_LRBatchDepth/official/layers/SelfAttention_Family.py",
+    "source_sha256": "d4a13c77149bf77cb452a28fa7675edae859298162d6c7596f29744207719d63",
+    "sha256": "d4a13c77149bf77cb452a28fa7675edae859298162d6c7596f29744207719d63",
+    "modified": true
+  },
+  {
+    "path": "third_party/medformer_paper/layers/Transformer_EncDec.py",
+    "source": "source_snapshots/baseline_LRBatchDepth/official/layers/Transformer_EncDec.py",
+    "source_sha256": "cb24a9a94eadff626d826463b28e3a89aa37aba1b724a3f460526c263118b336",
+    "sha256": "cb24a9a94eadff626d826463b28e3a89aa37aba1b724a3f460526c263118b336",
+    "modified": true
+  },
+  {
+    "path": "third_party/medformer_paper/layers/__init__.py",
+    "source": "source_snapshots/baseline_LRBatchDepth/official/layers/__init__.py",
+    "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "modified": true
+  },
+  {
+    "path": "third_party/medformer_paper/models/Autoformer.py",
+    "source": "source_snapshots/baseline_LRBatchDepth/official/models/Autoformer.py",
+    "source_sha256": "a90f7fb9dcc6d411335d05b6843a736bf9918915f5700696cad1721d9a0dc6d1",
+    "sha256": "47cf6146934edcf497e808eba8a204d5df045920b266feb81af8d4091fdfb660",
+    "modified": true
+  },
+  {
+    "path": "third_party/medformer_paper/models/Crossformer.py",
+    "source": "source_snapshots/baseline_LRBatchDepth/official/models/Crossformer.py",
+    "source_sha256": "68044eb3ccb0a7ad136424a58b32c70ddcb71906c2b6fbf457df1e66fc08c296",
+    "sha256": "137302a96d365f4857b1b8cae5f1b0b09e7655e84460656cfc230ba63863489a",
+    "modified": true
+  },
+  {
+    "path": "third_party/medformer_paper/models/FEDformer.py",
+    "source": "source_snapshots/baseline_LRBatchDepth/official/models/FEDformer.py",
+    "source_sha256": "08b1e8f26bd6498557a2df1b2b8f43da8ae05c48d2b2886bd1f56489591806de",
+    "sha256": "1219a48732879a250fc62a61a285fb43890597e09ed78290166b417d16a1c2c7",
+    "modified": true
+  },
+  {
+    "path": "third_party/medformer_paper/models/Informer.py",
+    "source": "source_snapshots/baseline_LRBatchDepth/official/models/Informer.py",
+    "source_sha256": "85d98e924aca3512fdcb63664d0edc1d4908f43aad33f3d983030cebd8ff8fd2",
+    "sha256": "2b011dca19b807ff4c188dd544db3da66dae6930fadc921c636b126d6002007c",
+    "modified": true
+  },
+  {
+    "path": "third_party/medformer_paper/models/MTST.py",
+    "source": "source_snapshots/baseline_LRBatchDepth/official/models/MTST.py",
+    "source_sha256": "85655acc6c5174988de89678511cadbaf5c4acb6a5776d89c0369f70a81caeb8",
+    "sha256": "a5348642f2e545c15c13a612f6c0d59fec17125d38c32a97dcde7601d6fe2173",
+    "modified": true
+  },
+  {
+    "path": "third_party/medformer_paper/models/Medformer.py",
+    "source": "source_snapshots/baseline_LRBatchDepth/official/models/Medformer.py",
+    "source_sha256": "55487af5eb2314789de4f56bcf14970949ce505faf5ada67bb4f1086d9152d58",
+    "sha256": "235568132a8209145bcbe47349a277b5085dcd993cbd5aac04aba2ca89c5ce50",
+    "modified": true
+  },
+  {
+    "path": "third_party/medformer_paper/models/Nonstationary_Transformer.py",
+    "source": "source_snapshots/baseline_LRBatchDepth/official/models/Nonstationary_Transformer.py",
+    "source_sha256": "d47359a528e3a6113e983b0fbda14861652d498e8fa07c57dd402c2dc2191b47",
+    "sha256": "b2d58442572122e4bd22faf28a3401252076312a79930f4a106357c6a31cc67a",
+    "modified": true
+  },
+  {
+    "path": "third_party/medformer_paper/models/PatchTST.py",
+    "source": "source_snapshots/baseline_LRBatchDepth/official/models/PatchTST.py",
+    "source_sha256": "e107d66d7a428b8e49558b5f946f3ca5c3ae2912f43c7dfba562e0bdf7428ac6",
+    "sha256": "00903b28df34bfb2eeca132e073f21e74aae6d43880fd04ec78ef70d5515a2db",
+    "modified": true
+  },
+  {
+    "path": "third_party/medformer_paper/models/Reformer.py",
+    "source": "source_snapshots/baseline_LRBatchDepth/official/models/Reformer.py",
+    "source_sha256": "d58dd362fa68376b3c4fcee54fa609b1f1fde0f5b750fa5c3618f214c805c205",
+    "sha256": "8332d859c6193b79db4f6d2cc217efb6f27344f23e87aa460b0507fa90af2d83",
+    "modified": true
+  },
+  {
+    "path": "third_party/medformer_paper/models/TCN.py",
+    "source": "source_snapshots/baseline_LRBatchDepth/official/models/TCN.py",
+    "source_sha256": "5005c2119287d3df4f000f6e5a45a5399f9ab15fbeef21da3dccf95e5fe527d5",
+    "sha256": "eb537c6983823fe05687e1e35dbc4ae46f1b35d7dad4b79caebcac2a400fc126",
+    "modified": true
+  },
+  {
+    "path": "third_party/medformer_paper/models/Transformer.py",
+    "source": "source_snapshots/baseline_LRBatchDepth/official/models/Transformer.py",
+    "source_sha256": "7d3c91a330052887abc7f6ff39bfd344b2218803ca2ea5eceb3994ad8569dbe4",
+    "sha256": "5b6f84fedfd9096dbd663a1e27f8f03ff9e469ca16bd1d2df75eae50a6d1bb60",
+    "modified": true
+  },
+  {
+    "path": "third_party/medformer_paper/models/__init__.py",
+    "source": "source_snapshots/baseline_LRBatchDepth/official/models/__init__.py",
+    "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "modified": true
+  },
+  {
+    "path": "third_party/medformer_paper/models/iTransformer.py",
+    "source": "source_snapshots/baseline_LRBatchDepth/official/models/iTransformer.py",
+    "source_sha256": "b877b7abbe5f3b03d7902c0d07189919a2d01ead51efdffd2a3e53fa2f64dfaf",
+    "sha256": "ec04429eb5f30ff8365d5d19ae6da219e20d296615922e0193c94251abfb6701",
+    "modified": true
+  }
+]
