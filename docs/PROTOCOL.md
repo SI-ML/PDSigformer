@@ -9,7 +9,7 @@
 | R3 | 有 | 有 | 无 |
 | R4 / PDSigformer | 有 | 有 | 有 |
 
-各行均保留粒度内注意力。R1/R2 单粒度为 Shimmer `2`、PADS `32`。R3/R4 使用 README 中的多粒度配置。R1 保持 R2 构造后提取 backbone 的初始化；R3 保持 R4 构造后移除 inter_attention 的初始化。
+各行均保留粒度内注意力。R1/R2 单粒度为 Shimmer `2`、PADS `32`。R3/R4 的多粒度配置见 [configs/paper.json](../configs/paper.json)。R1 保持 R2 构造后提取 backbone 的初始化；R3 保持 R4 构造后移除 inter_attention 的初始化。
 
 PDS 后端为 main `891f65b...`；历史 Medformer 及原生基线为论文版 `446275f...`。旧版仅模型与必要层单独命名，不覆盖 main。FEDformer 非张量随机频率索引用 `construction_metadata` 保存和恢复。权重严格匹配全部键；PDS 历史推理另外核验初始化 SHA，包括原见证的固定位置编码 buffer。
 
