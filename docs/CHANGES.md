@@ -1,27 +1,25 @@
-# 相对官方 Medformer 的变动
+# Changes from Medformer
 
-上游：`891f65b8a7e77188508fd8c56e10ccdba7fc1e18`。49 个官方 Python 文件逐字节保留。run.py、官方数据工厂、Exp_Classification、模型、层和工具文件均不编辑。
+Upstream revision: `891f65b8a7e77188508fd8c56e10ccdba7fc1e18`. All 49 upstream Python files are preserved byte for byte, including `run.py`, the data factory, `Exp_Classification`, models, layers, and utilities.
 
-替换根 README 为 PDSigformer 说明，原文保留为 README_MEDFORMER.md；扩展 .gitignore 排除本地产物。根 LICENSE 保留上游 MIT 条款与署名，并加入远端项目已有的 2026 SI-ML 署名。
+The root README describes PDSigformer; the original text is retained in `README_MEDFORMER.md` with an archive notice. `.gitignore` excludes local artifacts. The MIT license retains the upstream attribution and the existing 2026 SI-ML attribution. `.gitattributes` disables line-ending conversion to preserve source hashes.
 
-新增 .gitattributes 保留来源文件的精确字节，防止 Windows 自动换行转换破坏 SHA 校验。
+Seven unused upstream notebooks were removed: `experiments.ipynb`, `supplement_experiments.ipynb`, and the five notebooks under `data_preprocessing/`. Their original hashes remain in the upstream manifest, and the source audit records these omissions explicitly. The PADS/Shimmer preprocessing files contain documentation only; training and evaluation currently use frozen prepared arrays.
 
-移除未被本文实验调用的 7 个上游 Notebook：`experiments.ipynb`、`supplement_experiments.ipynb` 和 `data_preprocessing/` 中的 5 个原数据集预处理 Notebook。原始 SHA 清单保留，源码核验单独记录这些已批准的删减。PADS/Shimmer 预处理目录暂时提供两个空白 Python 文件及流程说明，尚未实现原始数据处理；本文训练和推理仍加载冻结的已处理数据。
-
-| 新增文件 / 目录 | 原因与影响 |
+| Added files / directories | Purpose |
 |---|---|
-| models/PDSigformer.py、pds_components.py、pds_timesnet.py | 已保存实验的残差模型与前端，不改变官方 Medformer |
-| models/TimesNet.py、models/TeCh.py | 独立基线及接口；TeCh 保留 core. 权重前缀 |
-| third_party/medformer_paper/ | 历史权重需要旧结构，只迁移导入命名空间 |
-| third_party/timesnet/ | 固定基线依赖，保留来源和许可证 |
-| data_provider/wearable_loader.py | 加载固定缓存，复用官方 collate，保持数组与 mask |
-| exp/exp_wearable.py | 继承官方分类类，独立训练循环，训练不读取 Test |
-| utils/pds_checkpoint.py、pds_runtime.py | SHA、指标、随机流、非张量状态和历史运行库 |
-| run_wearable.py、configs/paper.json | 明确 seed，避开原入口 itr 的自动设种子行为 |
-| scripts/、reproduction/、docs/ | 调用、排队、验收、清单和报告 |
+| `models/PDSigformer.py`, `pds_components.py`, `pds_timesnet.py` | Residual model and frontend used by the archived experiments |
+| `models/TimesNet.py`, `models/TeCh.py` | Baseline interfaces; TeCh retains the `core.` checkpoint prefix |
+| `third_party/medformer_paper/` | Historical baseline architecture with adapted import namespaces |
+| `third_party/timesnet/` | Pinned TimesNet dependencies, sources, and license |
+| `data_provider/wearable_loader.py` | Frozen cache loading with the upstream collate function and unchanged arrays/masks |
+| `exp/exp_wearable.py` | Classification subclass and historical training protocol; training never reads Test |
+| `utils/pds_checkpoint.py`, `pds_runtime.py` | Hashes, metrics, random states, non-tensor state, and historical runtimes |
+| `run_wearable.py`, `configs/paper.json` | Explicit training seeds and paper configurations |
+| `scripts/`, `reproduction/`, `docs/` | Execution helpers, validation records, manifests, and documentation |
 
-Reformer 兼容器原来按旧模块名称绑定 GELU；迁移后对隔离命名空间中的同一类做严格类型、层数与激活检查。公式、PTX 和模型参数不改。
+Reformer's compatibility adapter is bound to the corresponding classes in the isolated namespace, with strict layer and activation checks. Its formulas, PTX, and model parameters are unchanged. The wearable loader preserves PADS/Shimmer cache identities without changing the upstream data factory. The original entry point still supports prepared upstream datasets; their preprocessing notebooks remain available from Medformer.
 
-新增 loader 是为了固定 PADS/Shimmer 缓存及其身份检查，不需要修改官方 data_factory.py。原官方入口仍可加载已处理好的原数据集；如需原始数据预处理 Notebook，可从上游 Medformer 仓库获取。
+Run `python scripts/audit_source.py` to verify the upstream files. Clones without the original Medformer commit use the bundled hash manifest. Only the seven listed notebook omissions are allowed; other missing files fail the audit. This helper is not used in training or inference.
 
-`python scripts/audit_source.py` 检查上游文件；若新克隆的仓库未包含原 Medformer 提交对象，则使用随包提供的原始 SHA 清单核验，不要求重新拉取上游历史。仅对上述 7 个 Notebook 的缺失作明确记录，其余文件缺失仍会失败。此兼容处理只影响源码核验，不参与训练或推理。既有发布测试范围见 reproduction/RELEASE_VALIDATION.md。
+Maintained comments, docstrings, CLI help, and usage documentation use English. Third-party Python files and SHA-locked historical operator snapshots retain their original bytes; English explanations are provided in the adjacent README files. Comment changes refresh current-file hashes in `third_party/SOURCES.json` without altering archived source hashes. Historical validation records are retained as evidence; see [RELEASE_VALIDATION.md](../reproduction/RELEASE_VALIDATION.md).

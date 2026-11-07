@@ -1,4 +1,4 @@
-"""TimesNet 时序特征串联原 Medformer 的固定长度分类扩展。"""
+"""Fixed-length classification with TimesNet temporal features followed by Medformer."""
 
 from copy import deepcopy
 
@@ -11,7 +11,7 @@ from models.pds_timesnet import TimesBlock
 
 
 class TimesNetFeatureExtractor(nn.Module):
-    """复用官方分类分支到最后一个 LayerNorm，保留时间轴。"""
+    """Reuse the TimesNet classification stem through its last LayerNorm, preserving the time axis."""
 
     def __init__(self, configs):
         super().__init__()
@@ -24,7 +24,7 @@ class TimesNetFeatureExtractor(nn.Module):
 
         if front.seq_len < 2 or front.seq_len > 5000:
             raise ValueError("PDSigformer 要求 seq_len 在 2 到 5000 的范围内。")
-        # 下游 ListPatchEmbedding 将 seq_len 用作通道位置编码的 d_model。
+        # ListPatchEmbedding uses seq_len as the channel positional-encoding dimension.
         if front.seq_len % 2:
             raise ValueError("原 Medformer 通道位置编码使用 d_model=seq_len，要求 seq_len 为偶数。")
         if front.d_model <= 0 or front.d_model % 2:
@@ -45,7 +45,7 @@ class TimesNetFeatureExtractor(nn.Module):
         self.blocks = nn.ModuleList(
             [TimesBlock(front) for _ in range(front.e_layers)]
         )
-        # 与官方 TimesNet 一致：每个 block 后复用同一个 LayerNorm。
+        # Share one LayerNorm across all blocks, as in the official TimesNet implementation.
         self.layer_norm = nn.LayerNorm(front.d_model)
 
     def forward(self, x):
@@ -56,7 +56,7 @@ class TimesNetFeatureExtractor(nn.Module):
 
 
 class Model(nn.Module):
-    """[B,T,C] → TimesNet 隐特征 [B,T,D_ts] → Medformer → [B,K]。"""
+    """[B,T,C] -> TimesNet features [B,T,D_ts] -> Medformer -> class logits [B,K]."""
 
     def __init__(self, configs):
         super().__init__()
@@ -67,7 +67,7 @@ class Model(nn.Module):
         self.enc_in = configs.enc_in
         self.frontend = TimesNetFeatureExtractor(configs)
         backend = deepcopy(configs)
-        # 潜在特征作为下游输入通道；不改变共享 args 或原 Medformer 实现。
+        # Use latent features as channels without mutating shared args or the Medformer implementation.
         backend.enc_in = self.frontend.output_dim
         self.backbone = MedformerModel(backend)
 
@@ -91,7 +91,7 @@ class Model(nn.Module):
 
     def classification(self, x_enc, x_mark_enc):
         self._validate_input(x_enc, x_mark_enc)
-        # 全有效 mask 已检查，前后无需补零；不混入分类 logits 或切断梯度。
+        # The mask is fully valid: preserve temporal features and gradients without adding padding or class logits.
         hidden = self.frontend(x_enc)
         return self.backbone(hidden, x_mark_enc, None, None)
 

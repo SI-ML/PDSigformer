@@ -1,4 +1,4 @@
-"""只从实际测试记录生成公开指标、HTML 表格与验收摘要；保留失败尝试数量。"""
+"""Generate public metrics and reports from recorded tests, retaining failed-attempt counts."""
 import argparse
 import csv
 from collections import defaultdict

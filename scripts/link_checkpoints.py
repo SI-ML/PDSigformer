@@ -1,4 +1,4 @@
-"""按论文表格创建可读的权重链接，R4 与主实验共用同一个 SHA 对象。"""
+"""Create readable paper-table checkpoint links; R4 and the main result share one SHA object."""
 import argparse
 import csv
 import hashlib

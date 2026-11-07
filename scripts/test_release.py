@@ -1,4 +1,4 @@
-"""逐进程测试论文推理或从头训练，并实时写入队列状态 CSV。"""
+"""Run inference or training checks in independent processes and record live task status in CSV."""
 import argparse
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import csv

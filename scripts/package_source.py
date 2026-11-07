@@ -1,4 +1,4 @@
-"""制作不含数据、权重、账号记录和未授权第三方实现的源码 ZIP。"""
+"""Package source without data, weights, account records, or unlicensed third-party implementations."""
 import argparse
 import hashlib
 import json

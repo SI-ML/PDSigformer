@@ -1,2 +1,2 @@
-# 保留来源文件的精确字节，避免 Windows 自动换行转换破坏 SHA256 见证。
+# Preserve source bytes; disable automatic line-ending conversion to keep SHA256 checks stable.
 * -text

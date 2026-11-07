@@ -1,4 +1,4 @@
-"""配置、随机状态、指标与严格权重读写。"""
+"""Configuration, random state, metrics, and strict checkpoint serialization."""
 import csv
 import hashlib
 import json
@@ -61,7 +61,7 @@ def sha256(path):
 
 
 def load_trusted(path, expected_sha=None):
-    # 仅加载用户自己的训练产物或清单中 SHA 验证通过的历史权重。
+    # Load only the user's own training outputs or historical checkpoints verified against the SHA manifest.
     if expected_sha and sha256(path) != expected_sha:
         raise ValueError("checkpoint SHA256 不符")
     return torch.load(path, map_location="cpu", weights_only=False)

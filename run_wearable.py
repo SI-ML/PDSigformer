@@ -1,4 +1,4 @@
-"""PDSigformer 论文配置入口：列出实验、历史推理、独立训练。"""
+"""PDSigformer paper experiments: list configurations, train from scratch, or evaluate checkpoints."""
 import argparse
 import json
 import os
@@ -14,13 +14,13 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("mode", choices=["list", "eval", "train"])
     parser.add_argument("--config", type=Path, default=ROOT / "configs/paper.json")
-    parser.add_argument("--profile", help="例如 shimmer_r4、pads_timesnet")
+    parser.add_argument("--profile", help="e.g. shimmer_r4 or pads_timesnet")
     parser.add_argument("--seed", type=int, choices=[42, 43, 44], default=42)
     parser.add_argument("--artifact-root", type=Path, default=ROOT / "artifacts")
     parser.add_argument("--output", type=Path)
     parser.add_argument("--device", default="cuda:0")
-    parser.add_argument("--checkpoint", type=Path, help="评估本入口新训练的 best.pt；不传则使用历史 SHA 清单")
-    parser.add_argument("--epochs", type=int, help="训练测试的显式轮数覆盖，记录中会标记不属于完整重训")
+    parser.add_argument("--checkpoint", type=Path, help="Evaluate a newly trained best.pt; omit to use the historical checkpoint manifest")
+    parser.add_argument("--epochs", type=int, help="Override the epoch budget for a short training check, not a full paper rerun")
     cli = parser.parse_args()
     config = json.loads(cli.config.read_text(encoding="utf-8"))
     if cli.mode == "list":

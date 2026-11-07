@@ -1,4 +1,4 @@
-# Python 3.10；先按 README 安装 Torch 2.8.0 CUDA 12.8，再安装本文件。
+# Python 3.10: install PyTorch 2.8.0 with CUDA 12.8 as shown in README, then install this file.
 numpy==1.23.5
 pandas==1.5.3
 scipy==1.10.1

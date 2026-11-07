@@ -1,4 +1,4 @@
-"""比较串联、通道投影和原始输入残差的独立 PDS 试验模型。"""
+"""PDSigformer with serial, channel-projected, or input-residual connections."""
 
 from copy import deepcopy
 
@@ -11,7 +11,7 @@ from models.pds_components import TimesNetFeatureExtractor
 
 
 class Model(nn.Module):
-    """复用既有前后端，只在两者之间显式区分三种连接方式。"""
+    """Reuse the frontend and backbone while selecting the connection between them."""
 
     def __init__(self, configs):
         super().__init__()
@@ -26,7 +26,7 @@ class Model(nn.Module):
         self.frontend = TimesNetFeatureExtractor(configs)
         self.bridge_dropout = nn.Dropout(configs.dropout)
 
-        # projected/residual 的模块名称与初始化顺序一致，便于同种子对照。
+        # Keep module names and initialization order identical for same-seed projected/residual comparisons.
         self.projection = (
             nn.Identity()
             if self.variant == "serial"
@@ -39,7 +39,7 @@ class Model(nn.Module):
         self.backbone = MedformerModel(backend)
 
     def _validate_input(self, x_enc, padding_mask):
-        # 仅复用输入检查，不构造旧模型及其无用的 backbone。
+        # Reuse input validation without constructing the legacy model or its unused backbone.
         LegacyPDSigformer._validate_input(self, x_enc, padding_mask)
 
     def classification(self, x_enc, x_mark_enc):
@@ -50,7 +50,7 @@ class Model(nn.Module):
         )
         backend_input = self.projection(hidden)
         if self.variant == "residual":
-            # 这里的 X 是 loader 实际交给模型的输入，不是未预处理的磁盘信号。
+            # X is the preprocessed tensor delivered by the loader, not the raw signal on disk.
             backend_input = x_enc + backend_input
         return self.backbone(backend_input, x_mark_enc, None, None)
 

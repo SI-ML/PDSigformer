@@ -1,4 +1,4 @@
-"""TeCh 的 Medformer 接口；保留历史 checkpoint 的 core. 前缀。"""
+"""Medformer-compatible TeCh wrapper preserving the historical core. checkpoint prefix."""
 from torch import nn
 
 

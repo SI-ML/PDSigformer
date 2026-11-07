@@ -1,6 +1,6 @@
 # Data preprocessing
 
-`PADS_preprocessing.py` and `Shimmer_preprocessing.py` are empty placeholders. Implementations will be released later.
+`PADS_preprocessing.py` and `Shimmer_preprocessing.py` contain documentation only. Implementations will be released later.
 
 The planned workflow follows Medformer's offline preprocessing and dataset-loader structure:
 

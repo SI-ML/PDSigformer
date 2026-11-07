@@ -1,4 +1,4 @@
-"""固定论文配置的模型构造、非张量状态及历史推理运行库。"""
+"""Model construction, non-tensor state, and historical runtimes for fixed paper configurations."""
 from contextlib import contextmanager, nullcontext
 from copy import deepcopy
 import hashlib
@@ -96,7 +96,7 @@ def evaluation_rng(seed):
 
 
 def historical_context(artifact_root, run, selected, device):
-    """兼容库只用于锁定的历史 Test；训练不使用无梯度数值兼容算子。"""
+    """Use compatibility operators only for frozen historical Test runs, never for training."""
     if run["historical_manifest"] != "baseline78_unified_v4":
         return nullcontext()
     root = Path(artifact_root)
@@ -128,7 +128,7 @@ def historical_context(artifact_root, run, selected, device):
     config = json.loads((root / row["test_config"]).read_text())
     result = getattr(module, names[row["model"]])(root, row, config)
     if row["model"] == "Reformer":
-        # 冻结兼容器使用旧模块绝对名称；迁移后按同一类和同一激活做严格绑定。
+        # The frozen adapter uses legacy module names; bind the same classes and activations strictly.
         from third_party.medformer_paper.layers.Transformer_EncDec import EncoderLayer
         from third_party.medformer_paper.models.Reformer import Model
 

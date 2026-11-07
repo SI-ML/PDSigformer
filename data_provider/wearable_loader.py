@@ -1,4 +1,4 @@
-"""固定 split42 缓存的可移植加载器；不重新划分、标准化或改变 padding。"""
+"""Load frozen split42 arrays without re-splitting, normalization, or padding changes."""
 import csv
 import hashlib
 import json

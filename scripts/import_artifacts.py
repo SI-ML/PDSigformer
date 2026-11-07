@@ -1,4 +1,4 @@
-"""从自己的历史注册目录复制所需产物，并核验缺失训练数组的恢复来源。"""
+"""Import required archived artifacts and verify the provenance of recovered training arrays."""
 import argparse
 import csv
 import hashlib
@@ -41,7 +41,7 @@ def main():
             ):
                 if r.get(key):
                     required[r[key]] = r.get(key + "_sha256") or sha(src / r[key])
-    # PDS 原缓存目录缺少的 Train/Valid 数组，只能用原 SHA 完全相同的基线数组恢复。
+    # Recover missing PDS Train/Valid arrays only from baseline arrays with identical archived hashes.
     for dataset, task in (
         ("shimmer", "Shimmer_11_session11_DRINK"),
         ("pads", "PADS_10_task07_CrossArms"),

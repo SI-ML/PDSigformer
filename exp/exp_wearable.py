@@ -1,4 +1,4 @@
-"""在官方分类实验类上增加固定可穿戴协议，官方入口与实现保持不变。"""
+"""Wearable classification protocol built on the unmodified Medformer experiment class."""
 import csv
 import json
 import os
@@ -128,7 +128,7 @@ class Exp_Wearable(Exp_Classification):
         selected = self.selected_model()
         initial = state_hash(self.model)
         if historical and self.profile["kind"] == "pds":
-            # 原位置编码是非训练 buffer；整体初始化摘要验证其与原实验一致。
+            # Positional encodings are non-trainable buffers; verify initialization against the original experiment.
             with torch.no_grad():
                 for name, buf in self.model.named_buffers():
                     if name.endswith(".pe") and name in saved["model"]:
@@ -329,7 +329,7 @@ class Exp_Wearable(Exp_Classification):
             print(json.dumps(rows[-1]), flush=True)
             if stale >= patience:
                 break
-        # 严格读取新保存权重，并与另一全新模型的重载结果逐项对照。
+        # Reload the saved weights into a fresh model and verify its predictions.
         saved = load_trusted(output / "best.pt")
         selected = self.selected_model()
         restore_non_tensor(selected, saved["construction_metadata"])

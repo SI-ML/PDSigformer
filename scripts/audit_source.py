@@ -1,4 +1,4 @@
-"""核验上游 Python 文件原样保留，并列出新增和修改文件。"""
+"""Verify unchanged upstream Python files and report modified or omitted upstream files."""
 import argparse
 import hashlib
 import json
@@ -7,7 +7,7 @@ import subprocess
 
 ROOT = Path(__file__).resolve().parents[1]
 UPSTREAM = "891f65b8a7e77188508fd8c56e10ccdba7fc1e18"
-# 仅允许省略不参与本文实验的这七个上游 Notebook，其他缺失仍视为错误。
+# Only these seven unused upstream notebooks may be omitted; all other missing files are errors.
 OMITTED_NOTEBOOKS = {
     "data_preprocessing/ADFTD_preprocessing.ipynb",
     "data_preprocessing/APAVA_preprocessing.ipynb",

@@ -5,7 +5,7 @@ checkpoints/
 results/
 # Raw data
 dataset/
-# PDSigformer 可穿戴扩展的本地产物（源码包不含医疗数据与权重）
+# Local wearable experiment artifacts; source releases exclude medical data and checkpoints.
 artifacts/
 outputs/
 _private/

@@ -1,4 +1,4 @@
-"""从固定官方提交获取 TeCh，仅调整三个模块的相对导入并校验 SHA。"""
+"""Fetch pinned TeCh sources, adapt three relative imports, and verify their SHA256 hashes."""
 import hashlib
 import json
 from pathlib import Path
