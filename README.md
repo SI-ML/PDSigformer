@@ -15,7 +15,7 @@ pip install -r requirements-pdsigformer.txt
 
 ## Data
 
-We use PADS (CrossArms) and Shimmer (DRINK) with the fixed subject-independent split `split42`. Place the released data in `artifacts/`; see the [data layout](docs/ARTIFACTS.md).
+We use PADS (CrossArms) and Shimmer (DRINK) with the fixed subject-independent split `split42`. Place the released data in `artifacts/`; see the [data layout](docs/ARTIFACTS.md). [Preprocessing scripts](data_preprocessing/README.md) are currently placeholders.
 
 ## Training and Evaluation
 

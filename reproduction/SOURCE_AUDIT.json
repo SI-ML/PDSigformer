@@ -1,12 +1,21 @@
 {
   "upstream_commit": "891f65b8a7e77188508fd8c56e10ccdba7fc1e18",
-  "reference_source": "git",
+  "reference_source": "bundled_manifest",
   "upstream_python_files": 49,
   "upstream_python_files_changed": [],
   "modified_upstream_files": [
     ".gitignore",
     "LICENSE",
     "README.md"
+  ],
+  "omitted_upstream_notebooks": [
+    "data_preprocessing/ADFTD_preprocessing.ipynb",
+    "data_preprocessing/APAVA_preprocessing.ipynb",
+    "data_preprocessing/PTB-XL_preprocessing.ipynb",
+    "data_preprocessing/PTB_preprocessing.ipynb",
+    "data_preprocessing/TDBRAIN_preprocessing.ipynb",
+    "experiments.ipynb",
+    "supplement_experiments.ipynb"
   ],
   "missing_upstream_files": [],
   "passed": true

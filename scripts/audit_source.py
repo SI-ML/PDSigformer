@@ -7,6 +7,16 @@ import subprocess
 
 ROOT = Path(__file__).resolve().parents[1]
 UPSTREAM = "891f65b8a7e77188508fd8c56e10ccdba7fc1e18"
+# 仅允许省略不参与本文实验的这七个上游 Notebook，其他缺失仍视为错误。
+OMITTED_NOTEBOOKS = {
+    "data_preprocessing/ADFTD_preprocessing.ipynb",
+    "data_preprocessing/APAVA_preprocessing.ipynb",
+    "data_preprocessing/PTB-XL_preprocessing.ipynb",
+    "data_preprocessing/PTB_preprocessing.ipynb",
+    "data_preprocessing/TDBRAIN_preprocessing.ipynb",
+    "experiments.ipynb",
+    "supplement_experiments.ipynb",
+}
 
 
 def main():
@@ -38,13 +48,16 @@ def main():
         if manifest["commit"] != UPSTREAM:
             raise ValueError("上游 SHA 清单的提交版本不匹配")
         expected = manifest["files"]
-    changed, missing, py_count = [], [], 0
+    changed, missing, omitted, py_count = [], [], [], 0
     for name, digest in expected.items():
         path = ROOT / name
         if name.endswith(".py"):
             py_count += 1
         if not path.exists():
-            missing.append(name)
+            if name in OMITTED_NOTEBOOKS:
+                omitted.append(name)
+            else:
+                missing.append(name)
         elif hashlib.sha256(path.read_bytes()).hexdigest() != digest:
             changed.append(name)
     python_changed = [n for n in changed + missing if n.endswith(".py")]
@@ -54,6 +67,7 @@ def main():
         upstream_python_files=py_count,
         upstream_python_files_changed=python_changed,
         modified_upstream_files=changed,
+        omitted_upstream_notebooks=omitted,
         missing_upstream_files=missing,
         passed=not python_changed and not missing,
     )

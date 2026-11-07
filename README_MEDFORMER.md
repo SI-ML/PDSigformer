@@ -1,5 +1,7 @@
 # Medformer: A Multi-Granularity Patching Transformer for Medical Time-Series Classification (Neurips 2024)
 
+> Archived upstream README. The preprocessing and experiment notebooks mentioned below are not included in PDSigformer; they remain available in the [original Medformer revision](https://github.com/DL4mHealth/Medformer/tree/891f65b8a7e77188508fd8c56e10ccdba7fc1e18).
+
 #### Authors: 
 #### [Yihe Wang*](https://scholar.google.com/citations?user=1JRRcVkAAAAJ&hl=en)(ywang145@charlotte.edu), [Nan Huang*](https://github.com/TeddyHuang-00)(nhuang1@charlotte.edu), [Taida Li*](https://webpages.charlotte.edu/tli14/)(tli14@charlotte.edu),
 ####  [Yujun Yan](https://sites.google.com/umich.edu/yujunyan/home)(yujun.yan@dartmouth.edu), [Xiang Zhang](http://xiangzhang.info/)(xiang.zhang@charlotte.edu)

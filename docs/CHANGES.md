@@ -6,6 +6,8 @@
 
 新增 .gitattributes 保留来源文件的精确字节，防止 Windows 自动换行转换破坏 SHA 校验。
 
+移除未被本文实验调用的 7 个上游 Notebook：`experiments.ipynb`、`supplement_experiments.ipynb` 和 `data_preprocessing/` 中的 5 个原数据集预处理 Notebook。原始 SHA 清单保留，源码核验单独记录这些已批准的删减。PADS/Shimmer 预处理目录暂时提供两个空白 Python 文件及流程说明，尚未实现原始数据处理；本文训练和推理仍加载冻结的已处理数据。
+
 | 新增文件 / 目录 | 原因与影响 |
 |---|---|
 | models/PDSigformer.py、pds_components.py、pds_timesnet.py | 已保存实验的残差模型与前端，不改变官方 Medformer |
@@ -20,6 +22,6 @@
 
 Reformer 兼容器原来按旧模块名称绑定 GELU；迁移后对隔离命名空间中的同一类做严格类型、层数与激活检查。公式、PTX 和模型参数不改。
 
-新增 loader 是为了固定 PADS/Shimmer 缓存及其身份检查，不需要修改官方 data_factory.py。原官方入口和原数据集仍按原说明使用。
+新增 loader 是为了固定 PADS/Shimmer 缓存及其身份检查，不需要修改官方 data_factory.py。原官方入口仍可加载已处理好的原数据集；如需原始数据预处理 Notebook，可从上游 Medformer 仓库获取。
 
-`python scripts/audit_source.py` 检查上游文件；若新克隆的仓库未包含原 Medformer 提交对象，则使用随包提供的原始 SHA 清单核验，不要求重新拉取上游历史。此兼容处理只影响源码核验，不参与训练或推理。既有发布测试范围见 reproduction/RELEASE_VALIDATION.md，后续短程训练检查摘要见 README。
+`python scripts/audit_source.py` 检查上游文件；若新克隆的仓库未包含原 Medformer 提交对象，则使用随包提供的原始 SHA 清单核验，不要求重新拉取上游历史。仅对上述 7 个 Notebook 的缺失作明确记录，其余文件缺失仍会失败。此兼容处理只影响源码核验，不参与训练或推理。既有发布测试范围见 reproduction/RELEASE_VALIDATION.md。
